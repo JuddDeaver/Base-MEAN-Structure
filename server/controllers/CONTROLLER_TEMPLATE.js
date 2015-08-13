@@ -71,5 +71,23 @@ module.exports = (function() {
           })
       }
     });
+
+
+
+
+  // return Placeholder.findById(req.params.id, function (error, placeholder) {
+  //         return scope.placeholder.remove(function (error) {
+  //             if (error) {
+  //                 console.log(error);
+  //             } else {
+  //                 console.log("deleted placeholder: " + req.params.id);
+  //                 return res.send();
+  //             }
+  //         });
+  //     })
+  }
+
+
  }
 })();
+// note that this is just a code snippet of the show method from the object returned in the controller (this includes the exports module.exports
