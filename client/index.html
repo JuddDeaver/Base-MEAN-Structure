@@ -1,31 +1,31 @@
-<html ng-app="placeholders_app">
+<html ng-app="customers_app">
 <head>
   <title>Full Mean Demo="support tag from-rainbow"></title>
   <!-- require angular -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
   <script type="text/javascript">
-    var placeholders_app = angular.module('placeholders_app', []);
+    var customers_app = angular.module('customers_app', []);
   </script>
-  <script type="text/javascript" src="./controllers/placeholders.js"></script>
-  <script type="text/javascript" src="./factories/placeholders.js"></script>
+  <script type="text/javascript" src="./controllers/customers.js"></script>
+  <script type="text/javascript" src="./factories/customers.js"></script>
 </head>
-<!-- everything in the body is going to use the placeholders controller (this gives us access to the placeholders controller $scope) -->
-<body ng-controller="PlaceholdersController">
-  <h1>Placeholders</h1>
-  <input type="text" ng-model="filter_name" placeholder="filter">
+<!-- everything in the body is going to use the customers controller (this gives us access to the customers controller $scope) -->
+<body ng-controller="CustomersController">
+  <h1>Customers</h1>
+  <input type="text" ng-model="filter_name" customer="filter">
   <ul>
-    <!-- here is where we are going to display placeholders -->
-    <li ng-repeat="placeholder in placeholders | filter: filter_name">
-    <span ng-bind="placeholder.name"></span>
-    <span ng-bind="placeholder.age"></span>
-    <button ng-click='removePlaceholder(placeholder)'>Remove</button>
+    <!-- here is where we are going to display customers -->
+    <li ng-repeat="customer in customers | filter: filter_name">
+    <span ng-bind="customer.name"></span>
+    <span ng-bind="customer.age"></span>
+    <button ng-click='removeCustomer(customer)'>Remove</button>
     </li>
   </ul>
-  <h1>Add a Placeholder</h1>
+  <h1>Add a Customer</h1>
   <!-- objects and properties nothing scary -->
-  <input type="text" ng-model="placeholder.name" placeholder="name">
-  <input type="text" ng-model="placeholder.age" placeholder="age">
-  <!-- addplaceholder() is a method we are going to make in the angular controller -->
-  <input type="submit" ng-click="addPlaceholder(placeholder)">
+  <input type="text" ng-model="customer.name" customer="name">
+  <input type="text" ng-model="customer.age" customer="age">
+  <!-- addcustomer() is a method we are going to make in the angular controller -->
+  <input type="submit" ng-click="addCustomer(customer)">
 </body>
 </html>
