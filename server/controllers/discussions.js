@@ -1,7 +1,7 @@
-// First add the following two lines at the top of the placeholders controller so that we can access our model through var Placeholder
+// First add the following two lines at the top of the discussions controller so that we can access our model through var Discussion
 // need to infouire mongoose to be able to run mongoose.model()
 var mongoose = require('mongoose');
-var Placeholder = mongoose.model('Placeholder');
+var Discussion = mongoose.model('Discussion');
 
 // Edit the show method as follows
 module.exports = (function() {
@@ -11,14 +11,14 @@ module.exports = (function() {
   // New (get)
   // Create (post)
     create: function(req, res) {
-      var user = new Placeholder({name: req.body.name, age: req.body.age});
+      var user = new Discussion({name: req.body.name, age: req.body.age});
       user.save(
         function(err) {
         if(err) {
           console.log('something went wrong');
         } else { // else console.log that we did well and then redirect to the root route
           console.log('successfully added a user!');
-          Placeholder.find({},function(err,data){
+          Discussion.find({},function(err,data){
             res.json(data);
           })
         }
@@ -29,7 +29,7 @@ module.exports = (function() {
 // Retrieve
   // Index (all records)
   index: function(req, res) {
-     Placeholder.find(
+     Discussion.find(
       {},
       function(err, results) {
        if(err) {
@@ -41,7 +41,7 @@ module.exports = (function() {
   },
   // Show (Single Record)
   show: function(req, res) {
-    Placeholder.find(
+    Discussion.find(
     {_id: req.params.id},
     function(err, results) {
       if(err) {
@@ -60,13 +60,13 @@ module.exports = (function() {
 // Destroy
   // Delete
   delete: function(req,res) {
-    Placeholder.remove(
+    Discussion.remove(
       {_id: req.params.id},
       function(err, results) {
         if (err) {
           console.log(err);
         } else {
-          Placeholder.find({},function(err,data){
+          Discussion.find({},function(err,data){
             res.json(data);
           })
       }
@@ -75,12 +75,12 @@ module.exports = (function() {
 
 
 
-  // return Placeholder.findById(req.params.id, function (error, placeholder) {
-  //         return scope.placeholder.remove(function (error) {
+  // return Discussion.findById(req.params.id, function (error, discussion) {
+  //         return scope.discussion.remove(function (error) {
   //             if (error) {
   //                 console.log(error);
   //             } else {
-  //                 console.log("deleted placeholder: " + req.params.id);
+  //                 console.log("deleted discussion: " + req.params.id);
   //                 return res.send();
   //             }
   //         });

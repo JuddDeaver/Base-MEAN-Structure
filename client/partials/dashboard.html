@@ -1,0 +1,54 @@
+<div ng-controller="discussionsController as dC">
+	<h1>Welcome, {{ dC.loginName }}!</h1>
+	<input type="text" ng-model="filter_name" placeholder="filter">
+	<div id="post_table">
+		<table>
+			<thead>
+				<th>Category</th>
+				<th>Topic</th>
+				<th>User Name</th>
+				<th>Posts</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Ruby on Rails</td>
+					<td><a href="">Best/easiest way to encrypt password?</a></td>
+					<td><a href="">Joe</a></td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>MySQL</td>
+					<td><a href="">Database Structure</a></td>
+					<td><a href="">sphinx</a></td>
+					<td>9</td>
+				</tr>
+				<tr>
+					<td>UX</td>
+					<td><a href="">How to make my website user-friendly?</a></td>
+					<td><a href="">the_one</a></td>
+					<td>22</td>
+				</tr>
+				<tr>
+					<td>Web Development</td>
+					<td><a href="">What is the first thing you should learn if you want to be a web developer?</a></td>
+					<td><a href="">Zen</a></td>
+					<td>2</td>
+				</tr>
+			</tbody>
+		</table>
+	</div> <!-- post_table -->
+	<div id="new_topic">
+		<h1>Add a new Topic</h1>
+		<label>Topic:<input type="textbox"></label>
+		<label>Description:<textarea></textarea></label>
+		<label>Category:
+			<select>
+				<option value="HTML">HTML</option>
+				<option value="SQL">SQL</option>
+				<option value="UX">UX</option>
+				<option value="Ruby">Ruby</option>
+			</select>
+		</label>
+		<button>Submit</button>
+	</div>
+</div>
